@@ -26,6 +26,10 @@ export default class CreateTransactions1588720023618
             type: 'varchar',
           },
           {
+            name: 'type',
+            type: 'varchar',
+          },
+          {
             name: 'value',
             type: 'int',
           },
@@ -54,7 +58,7 @@ export default class CreateTransactions1588720023618
         name: 'TransactionCategory',
         columnNames: ['category_id'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'category',
+        referencedTableName: 'categories',
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
       }),
