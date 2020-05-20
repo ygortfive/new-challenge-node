@@ -4,7 +4,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
+  OneToMany,
 } from 'typeorm';
 
 import Transaction from './Transaction';
@@ -17,7 +17,7 @@ class Category {
   @Column()
   title: string;
 
-  @ManyToOne(() => Transaction)
+  @OneToMany(() => Transaction, transaction => transaction.category)
   transaction: Transaction;
 
   @CreateDateColumn()
